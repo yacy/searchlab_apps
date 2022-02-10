@@ -1,0 +1,19 @@
+{
+    "@context":"http://schema.org",
+    "@type":"SoftwareApplication",
+    "name":"boilerplate_websearch",
+    "headline":"Minimalistic Boilerplate Web Search App for Searchlab Apps",
+    "alternativeHeadline":"The 'hello world' app that you want to copy-paste for your own web search app",
+    "applicationCategory":"Web Search",
+    "applicationSubCategory":"Minimalistic",
+    "license": "https://creativecommons.org/publicdomain/zero/1.0/",
+    "dateCreated": "2022-02-02",
+    "dateModified": "2022-02-07",
+    "version": "1.0",
+    "author":{
+        "@type":"Person",
+        "name":"Michael Peter Christen",
+        "url":"http://yacy.net",
+        "sameAs":"https://github.com/orbiterlab"
+    }
+}
