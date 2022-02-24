@@ -5,7 +5,7 @@
  */
 
 var homepage="http://yacy.net";
-var logo="../images/YaCyLogo2011_60.png";
+var logo="images/YaCyLogo2011_60.png";
 var headline="Search Portal";
 var greeting="Document Search";
 var queryplaceholder="Document Retrieval";
