@@ -80,6 +80,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
   </script>
   <script type="text/javascript" src="bootstrap/js/typeahead.jquery.min.js"></script>
   <script type="text/javascript">
+  //<!--
      var suggestMatcher = function() {
        return function opensearch(q, cb) {
             $.getJSON(suggest_api + "?callback=?&q="+ q, function(data) {
@@ -105,6 +106,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
         source: suggestMatcher()
       });
     });
+  //-->
   </script>
   <style type="text/css">.twitter-typeahead {margin: 0px;padding: 0px;top:2px;}</style> <!-- fix for input window -->
 </head>
@@ -121,7 +123,7 @@ open about:config and set security.fileuri.strict_origin_policy to ‘false.’
           <span class="icon-bar"></span>
         </button>
         <a id="homepage" class="navbar-brand" href="http://yacy.net" style="position:absolute;top:-6px;display:inline;white-space:nowrap;">
-          <img id="logo" class="yacylogo" src="images/YaCyLogo2011_60.png" alt="YaCy" style="height:auto; width:auto; max-width:200px; max-height:32px;vertical-align:middle">
+          <img id="logo" class="yacylogo" src="../_/img/YaCyLogo2011_60.png" alt="YaCy" style="height:auto; width:auto; max-width:200px; max-height:32px;vertical-align:middle">
         </a>
         <span id="topmenu" style="position:absolute;top:12px;left:80px;display:inline;white-space:nowrap;font-size:2em;"></span>
       </div>

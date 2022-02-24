@@ -40,19 +40,8 @@ function menu() {
 
 function context() {
   document.writeln("<div style=\"display:block; float:none; width:auto; text-align:right; float:right; display:inline;\">");
-  languages();
   searchform();
   document.writeln("</div>");
-}
-
-function languages() {
-  document.writeln("<ul style=\"padding-left:0px;padding-right:0px;\">");
-  document.writeln("<li><a href=\"http://translate.google.com/translate?langpair=de|ar&u=" + document.URL + "\"><img width=\"14\" height=\"8\" src=\"../images/flag_arabic_28x17.gif\" title=\"العربية\"></a></li>");
-  document.writeln("<li><a href=\"../de/\"><img width=\"14\" height=\"8\" src=\"../images/flag_deutsch_28x17.gif\" title=\"deutsch\"></a></li>");
-  document.writeln("<li><a href=\"../fr/\"><img width=\"14\" height=\"8\" src=\"../images/flag_francais_28x17.gif\" title=\"français\"></li>");
-  document.writeln("<li><a href=\"../es/\"><img width=\"14\" height=\"8\" src=\"../images/flag_espanol_28x17.gif\" title=\"español\"></li>");
-  document.writeln("<li><a href=\"../en/\"><img width=\"14\" height=\"8\" src=\"../images/flag_english_28x17.gif\" title=\"english\"></a></li>");
-  document.writeln("</ul>");
 }
 
 function searchform() {
