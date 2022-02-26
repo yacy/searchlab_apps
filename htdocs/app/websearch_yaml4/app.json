@@ -1,13 +1,13 @@
 {
     "@context":"http://schema.org",
     "@type":"SoftwareApplication",
-    "name":"websearch_lit",
-    "headline":"Minimalistic Boilerplate Web Search App for Searchlab Apps",
-    "alternativeHeadline":"The 'hello world' app that you want to copy-paste for your own web search app",
+    "name":"websearch_yaml4",
+    "headline":"Web Search App with YAML 4",
+    "alternativeHeadline":"Rich Faceted Search Front-End",
     "applicationCategory":"Web Search",
-    "applicationSubCategory":"Minimalistic",
+    "applicationSubCategory":"Faceted Search",
     "license": "https://creativecommons.org/publicdomain/zero/1.0/",
-    "dateCreated": "2022-02-02",
+    "dateCreated": "2022-02-25",
     "dateModified": "2022-02-25",
     "version": "1.0",
     "author":{
