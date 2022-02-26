@@ -19,7 +19,7 @@ any of the given app. We recommend to start with the `websearch_lit` app,
 just make a copy of it!
 
 To start hacking, just clone this repository and open any of the `index.html`
-files within the app project inside the `htdocs` folder.
+files within the app project inside the `htdocs/app/` folder.
 
 Each of those apps should work fine without hosting the html pages with
 a web server. Just open the corresponding `index.html` in your browser for
@@ -30,16 +30,16 @@ If you like please give us a pull request with your new app!
 We love to extend the searchlab apps with community-created content.
 
 To do so, please..
-- Create a new subfolder within `htdocs` with the name of your app
+- Create a new subfolder within `htdocs/app/` with the name of your app
 - Create a app.json and fill it with an app description using at least
-  the same fields as used in `htdocs/websearch_list/app.json`.
+  the same fields as used in `htdocs/app/websearch_lit/app.json`.
   The app.json is used within https://searchlab.eu to show a proper visualization
   of your app.
 - You must create a `index.html` file within your app folder.
 - You must create a `screenshot.png` file with the exact size of 1024x1024.
   The image should not contain any transparency and it should show a mostly
   proper screenshot of your app when it is producing something useful for the user.
-- You can use all `css` and `js` code as given in `htdocs/css` and `htdocs/js`,
+- You can use all `css` and `js` code as given in `htdocs/app/_/css` and `htdocs/app/_/js`,
   but you *MUST NOT* add any files to those directories. If you need any other
   `css` and `js` code, please link them directly from the internet or add those
   to your app folder in a separate `css`/`js`-path within your app folder.
@@ -58,10 +58,10 @@ There are several options to install these apps:
 - For integration of single apps inside your own web pages, just copy the
   corresponding app inside your own content. Because of the CC0 license you don't
   need to mention the source, just go ahead and use what you can find here.
-  You will probably need to integrate `css` and `js` code from the `htdocs/css`
-  and `htdocs/js` as well.
+  You will probably need to integrate `css` and `js` code from the `htdocs/app/_/css`
+  and `htdocs/app/_/js` as well.
 - To use your own search server, run a searchlab instance and modify the path
-  to your instance in `htdocs/js/config.js`.
+  to your instance in `htdocs/app/_/js/config.js`.
 
 ## Support this project!
 Please become a Searchlab patron by joining us at
