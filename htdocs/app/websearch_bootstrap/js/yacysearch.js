@@ -11,7 +11,7 @@ var SearchModel = Backbone.Model.extend({
   defaults:{hl:'false',query:'',start:'0',rows:'100',layout:'paragraph',startTime:new Date(),servlet:"index.html",contentdom:"text"},
 
   url:function(){
-    u = search_api + '?callback=?&hl=false&wt=yjson&facet=true&facet.mincount=1&facet.field=host_s&facet.field=url_file_ext_s&facet.field=url_protocol_s&facet.field=author_sxt&facet.field=collection_sxt&start=' + this.attributes.start + '&rows=' + this.attributes.rows + '&contentdom=' + (this.attributes.layout == "images" ? "image" : this.attributes.contentdom) + '&query=' + this.attributes.query;
+    u = search_api + '?callback=?&hl=false&wt=yjson&facet=true&facet.mincount=1&facet.field=host_s&facet.field=url_file_ext_s&facet.field=url_protocol_s&facet.field=author_sxt&facet.field=collection_sxt&startRecord=' + this.attributes.start + '&rows=' + this.attributes.rows + '&contentdom=' + (this.attributes.layout == "images" ? "image" : this.attributes.contentdom) + '&query=' + this.attributes.query;
     if (this.attributes.layout == "images") u += "&fq=url_file_ext_s:(png+OR+jpeg+OR+jpg+OR+gif)";
     return encodeURI(u);
   },
@@ -350,7 +350,8 @@ function fadeOutBar() {
 function statistics(startRecord, maximumRecords, totalcount, navurlbase) {
   if (totalcount == 0) return;
   if (startRecord >= 0) document.getElementById("startRecord").setAttribute('value', startRecord);
-
+  if (navurlbase.endsWith("#")) navurlbase = navurlbase.substring(0, navurlbase.length - 1);
+  
   // compose page navigation
   var results_from = parseInt(startRecord) + 1;
   var results_to = Math.min(parseInt(startRecord) + parseInt(maximumRecords), totalcount);
