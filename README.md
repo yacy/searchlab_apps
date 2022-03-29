@@ -8,6 +8,10 @@ this repository is for you.
 This is a collection of Search Widgets and Dashboards that can be used
 with the Searchlab at https://searchlab.eu and in your own web pages.
 
+Most of these apps are also usable with YaCy because the searchlab implements
+the exact same search API as YaCy. Just change the API endpoint in
+https://github.com/yacy/searchlab_apps/blob/main/htdocs/app/_/js/conf.js
+
 For an instant demo of these search apps just go to https://searchlab.eu
 and click on "Apps".
 
