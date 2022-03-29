@@ -17,6 +17,11 @@ var search_api = "https://searchlab.eu/en/api/yacysearch.json";
 // ## YaCy P2P Paths
 //var search_api = "http://localhost:8090/yacysearch.json";
 
+// ### Index API
+// ## Searchlab Paths
+var index_api = "https://searchlab.eu/en/api/index.json";
+//var index_api = "https://localhost:8400/en/api/index.json";
+
 // Suggest API
 // ## Searchlab Paths
 var suggest_api = "https://searchlab.eu/en/api/suggest.json";
