@@ -1,0 +1,85 @@
+<html>
+<head>
+    <!-- hosted location: http://localhost:8400/api/yacysearch.html -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Searchlab Search Template</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- library to configure backend service access -->
+    <script language="javascript" type="text/javascript" src="../_/js/conf.js"></script>
+    
+    <!-- libraries for graphics -->
+    <script language="javascript" type="text/javascript" src="../_/js/plotly.min.js"></script>
+
+    <!-- css from https://github.com/ajusa/lit -->
+    <link rel="stylesheet" type="text/css" href="../_/css/lit.css" media="screen" />
+</head>
+
+<body class="m0">
+    <div class="c" style="max-width: 120em;">
+        <h1>Searchlab.eu&nbsp;/ Document Facet Pie Charts</h1>
+
+        <div class="row">
+            <input type="text" name="query" id="query" class="card w-75" autofocus="autofocus" onFocus="this.select()" onClick="document.getElementById('startRecord').value=0;document.getElementById('query').value='';"/>&nbsp;
+            <input type="hidden" name="startRecord" id="startRecord" value="0"/>
+            <button id="search" onclick="return search()" class="btn primary">search</button>
+        </div>
+
+        <div id="result">
+            <table border="0">
+            <tr><th>Filetypes</th><th>Authors</th><th>Providers</th></tr>
+            <tr><td><div id="pie_filetype"></div></td><td><div id="pie_authors"></div></td><td><div id="pie_provider"></div></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        // XHR request to evaluate search request
+        function search() {
+            const query = document.querySelector('#query').value;
+            const startRecord = parseInt(document.querySelector('#startRecord').value); // starts at 0
+            const xhr = new XMLHttpRequest();
+            xhr.open('GET', search_api + '?startRecord=' + startRecord + '&query=' + query);
+            xhr.setRequestHeader('Content-type', 'application/json');
+            xhr.responseType = 'json';
+            xhr.send();
+            xhr.onload = function() {
+                var channel = xhr.response.channels[0];
+                channel["results"] = channel.totalResults == 0 ? "no results" : "<p>" + channel.totalResults + " hits, page " + channel.page + " of " + channel.pages + "</p>";
+                // paint the graphics
+                var layout = {height: 700, width: 500, pad: 0};
+                piemap = {};
+                for (let i = 0; i < channel.navigation.length; i++) {
+                    var nav = channel.navigation[i];
+                    // compute attributes of pie chart for this facet:
+                    var values = [];
+                    var labels = [];
+                    for (let j = 0; j < nav.elements.length; j++) {
+                        values.push(nav.elements[j].percent);
+                        labels.push(nav.elements[j].name);
+                    }
+                    var data = [{
+                        values: values,
+                        labels: labels,
+                        textinfo: "label+percent",
+                        textposition: "outside",
+                        automargin: true,
+                        showlegend: false,
+                        type: 'pie'
+                      }];
+                    piemap[nav.displayname] = data;
+                }
+                Plotly.newPlot('pie_filetype', piemap.Filetype, layout);
+                Plotly.newPlot('pie_authors', piemap.Authors, layout);
+                Plotly.newPlot('pie_provider', piemap.Provider, layout);
+            }
+        }
+    </script>
+    <script>
+        // event listener on query field to trigger search button when enter is hit
+        var input = document.getElementById("query");
+        input.addEventListener("keyup", function(event) {if (event.keyCode === 13) {return search();}});
+    </script>
+</body>
+</html>
