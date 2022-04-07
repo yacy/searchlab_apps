@@ -2,7 +2,7 @@
     "@context":"http://schema.org",
     "@type":"SoftwareApplication",
     "name":"websearch_lit",
-    "headline":"Minimalistic Boilerplate Web Search App for Searchlab Apps",
+    "headline":"Minimalistic Boilerplate Web Search",
     "alternativeHeadline":"The 'hello world' app that you want to copy-paste for your own web search app",
     "applicationCategory":"Web Search",
     "applicationSubCategory":"Minimalistic",
