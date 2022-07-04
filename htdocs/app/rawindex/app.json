@@ -1,9 +1,9 @@
 {
     "@context":"http://schema.org",
     "@type":"SoftwareApplication",
-    "name":"Snippet Lines",
-    "headline":"Search Results as Snippet Lines",
-    "alternativeHeadline":"Consider this as a text generator",
+    "name":"Raw Index",
+    "headline":"JSON Document from Search Index",
+    "alternativeHeadline":"To view documents as they are stored",
     "applicationCategory":"Web Search",
     "applicationSubCategory":"Minimalistic",
     "license": "https://creativecommons.org/publicdomain/zero/1.0/",
