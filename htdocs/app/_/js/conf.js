@@ -5,30 +5,38 @@
 // it is possible to run the Searchlab Apps also against a YaCy P2P instance.
 // This applies also for YaCy Grid.
 
+var host = "https://searchlab.eu/";
+//var host = "http://localhost:8400/";
+
+// the user must be overwritten with the current user
+var user = "en";
+
+// parse the location url to overwrite the user id
+var path = window.location.pathname.split("/");
+if (path.length > 0) user = path[1];
+
 // ### Search API
 // ## Searchlab Paths
-var search_api = "https://searchlab.eu/en/api/yacysearch.json";
-//var search_api = "http://localhost:8400/en/api/yacysearch.json";
+var search_api = host + user + "/api/yacysearch.json";
 
 // ## YaCy Grid Paths
 //var search_api = "http://searchlab.eu/yacy/grid/mcp/index/yacysearch.json";
-//vae search_api = "http://127.0.0.1:8100/yacy/grid/mcp/index/yacysearch.json";
 
 // ## YaCy P2P Paths
 //var search_api = "http://localhost:8090/yacysearch.json";
 
 // ### Index API
 // ## Searchlab Paths
-var index_api = "https://searchlab.eu/en/api/index.json";
-//var index_api = "https://localhost:8400/en/api/index.json";
+var index_api = host + user + "/api/index.json";
 
 // Suggest API
 // ## Searchlab Paths
-var suggest_api = "https://searchlab.eu/en/api/suggest.json";
-//var suggest_api = "http://localhost:8400/en/api/suggest.json";
+var suggest_api = host + user + "/api/suggest.json";
 
 // ## YaCy Grid Paths
 //var suggest_api = "http://searchlab.eu/yacy/grid/mcp/index/suggest.json";
 
 // ## YaCy P2P Paths
 //var suggest_api = "http://localhost:8090/suggest.json";
+
+
