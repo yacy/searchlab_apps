@@ -13,7 +13,7 @@ var user = "en";
 
 // parse the location url to overwrite the user id
 var path = window.location.pathname.split("/");
-if (path.length > 0) user = path[1];
+if (path.length > 2) user = path[1];
 
 // ### Search API
 // ## Searchlab Paths
