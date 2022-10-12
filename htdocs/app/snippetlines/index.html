@@ -60,11 +60,18 @@
                 document.getElementById("pagination").innerHTML = new t(document.getElementById('paginationtemplate').innerHTML).render({"items": channel.pagenav});
             }
         }
-    </script>
-    <script>
+
         // event listener on query field to trigger search button when enter is hit
         var input = document.getElementById("query");
         input.addEventListener("keyup", function(event) {if (event.keyCode === 13) {return search();}});
+
+        // parse url to do the query if a query appears in the url params part
+        const urlParams = new URLSearchParams(window.location.search);
+        const queryParam = urlParams.get('query');
+        if (queryParam) {
+            document.querySelector('#query').value = queryParam;
+            search();
+        }
     </script>
 </body>
 </html>
